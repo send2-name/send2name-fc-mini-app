@@ -31,8 +31,8 @@ export default {
   components: {
     Navbar,
   },
+
   mounted() {
-    //const { $farcaster } = useNuxtApp()
     this.$farcaster.actions.ready()
   }
 }

@@ -17,7 +17,7 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
-          <li class="nav-item mb-4">
+          <li class="nav-item mb-4" data-bs-dismiss="offcanvas" aria-label="Close">
             <NuxtLink to="/about" class="btn btn-primary">About</NuxtLink>
           </li>
 
@@ -65,10 +65,6 @@
             <ConnectButton color="btn-primary" />
           </li>
 
-          <li class="nav-item mb-4" v-if="!isActivated">
-            <TestConnectButton color="btn-primary" />
-          </li>
-
           <li class="nav-item mb-4">
             <button class="btn btn-warning" data-bs-dismiss="offcanvas" aria-label="Close">Close menu</button>
           </li>
@@ -85,14 +81,12 @@ import { getBalance, switchChain } from '@wagmi/core'
 import { useAccount, useConfig, useDisconnect } from '@wagmi/vue';
 import { formatEther } from 'viem'
 import ConnectButton from '~/components/ConnectButton.vue';
-import TestConnectButton from '~/components/TestConnectButton.vue';
 
 export default {
   name: "Navbar",
 
   components: {
     ConnectButton,
-    TestConnectButton,
   },
 
   data() {
